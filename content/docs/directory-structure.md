@@ -22,7 +22,7 @@ Let’s look at an example site structure:
 │  └─ robots.txt
 ├─ output
 ├─ layout.jst
-├─ style.scss
+├─ style.less
 └─ config.yaml
 ```
 
@@ -55,9 +55,9 @@ This is the directory that by default holds the generated site, ready to be depl
 This is an optional [underscore template](http://underscorejs.org/#template) file that is used against every markdown file to generate the corresponding HTML file.
 
 
-### `style.scss`
+### `style.less`
 
-This is an optional custom stylesheet that is feeded to the [SASS](http://sass-lang.com/) CSS pre-processor. Other than `.scss` it can have `.sass` or `.css` as the extension.
+This is an optional custom stylesheet that is passed to the [LESS](http://lesscss.org/) CSS pre-processor. Alternatively you can have a `style.css` vanilla CSS file.
 
 
 ### `config.yaml`
