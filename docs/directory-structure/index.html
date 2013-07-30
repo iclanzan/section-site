@@ -1,0 +1,21 @@
+<!DOCTYPE html><html dir=ltr lang=en><head><meta charset=utf-8><title>Directory Structure</title><meta name=viewport content="initial-scale=1.0, user-scalable=no"><link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic|Source+Code+Pro&amp;subset=latin,latin-ext" rel=stylesheet><link href="/style.css" rel=stylesheet media=all><link rel=canonical href="/docs/directory-structure/"><meta name=description content="With Section the hierarchy of your site’s files is important. It is solely responsible for the resulting permalink structure."><body><span id=btn></span><aside><section><nav><a href="/blog/">Blog</a><a href="/docs/" class=active>Documentation</a></nav><h2><a class=home href="/" title=Home>Section</a></h2><hr><h5>Navigation</h5><ul><li><h4><a href="/docs/basic-usage/">Basic Usage</a></h4></li><li><h4><a href="/docs/directory-structure/" class=active>Directory Structure</a></h4></li></ul><hr><h5>Recent</h5><h4><a href="/blog/say-hello-to-section/" title="Published May 25, 2013">Say hello to Section</a></h4></section></aside><main><section><header><h1>Directory Structure</h1></header><p>With Section the hierarchy of your site’s files is important. It is solely responsible for the resulting permalink structure.</p><p>Let’s look at an example site structure:</p><pre><code class=lang-text>.
+├─ content
+│  ├─ index.md
+│  ├─ about.md
+│  ├─ blog
+│  │  ├─ index.md
+│  │  ├─ 2013-05-20-why-section
+│  │  │  ├─ index.md
+│  │  │  └─ image.png
+│  │  └─ 2013-04-22-reasons-to-learn-javascript.md
+│  └─ docs
+│     └─ overview.md
+├─ assets
+│  ├─ favicon.ico
+│  └─ robots.txt
+├─ output
+├─ layout.jst
+├─ style.less
+└─ config.yaml</code></pre><p>Now let’s see what each of the files and directories are.</p><h3 id=content><code>content</code></h3><p>This directory holds your content which usually means markdown files. The way files are organized here will determine the URL or permalink of each page of your site. For example the file stored in <code>content/docs/overview.md</code> will have <code>/docs/overview/</code> as the URL.</p><p>For documents where the published date is needed, such as blog posts, you can prefix the year, month and day to the name of the file. Thus the file at <code>site/blog/2013-04-22-reasons-to-learn-javascript.md</code> will have the permalink <code>/blog/reasons-to-learn-javascript/</code> and the date will be available inside the layout template.</p><p>If a document has associated files like images they can be stored along side it and will be copied over to the output directory unmodified.</p><p><strong>You need nothing more than this directory to generate a beautiful website.</strong></p><h3 id=assets><code>assets</code></h3><p>Files in this directory will be copied unmodified to the generated site. This is where you would put your static resources, such as images, scripts and stylesheets.</p><h3 id=output><code>output</code></h3><p>This is the directory that by default holds the generated site, ready to be deployed.</p><h3 id=layoutjst><code>layout.jst</code></h3><p>This is an optional <a href="http://underscorejs.org/#template">underscore template</a> file that is used against every markdown file to generate the corresponding HTML file.</p><h3 id=styleless><code>style.less</code></h3><p>This is an optional custom stylesheet that is passed to the <a href="http://lesscss.org/">LESS</a> CSS pre-processor. Alternatively you can have a <code>style.css</code> vanilla CSS file.</p><h3 id=configyaml><code>config.yaml</code></h3><p>Holds configuration data as YAML or JSON—in which case a <code>.json</code> extension is needed.</p></section><footer><section><p class=center><a class=section title="Built with section v0.4.1" href="http://section.iclanzan.com"><span></span><strong>Section</strong></a></p></section></footer></main><script>
+    /(iPad|iPhone|iPod)/g.test(navigator.userAgent) && document.documentElement.classList.add('ios');
+  </script>
